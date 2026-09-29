@@ -53,6 +53,17 @@ Output goes to the first IAC bus and input comes from the first non-IAC port (yo
 
 Note names use C4 = MIDI 60.
 
+## Related projects
+
+Other MIDI MCP servers do different jobs, and some do them better:
+
+- **Composing files:** [tubone24/midi-mcp-server](https://github.com/tubone24/midi-mcp-server) creates MIDI from structured JSON, with a piano-roll preview in the chat. [TripleAt/midi-mcp](https://github.com/TripleAt/midi-mcp) edits and transforms existing `.mid` files.
+- **Composing and playing out:** [mikeborozdin/vibe-composer-midi-mcp](https://github.com/mikeborozdin/vibe-composer-midi-mcp) composes multi-track "whole band" arrangements and plays them on a synth. [michelkro/midi-mcp](https://github.com/michelkro/midi-mcp) adds music theory and genre tools.
+- **Raw MIDI in and out:** [ugufru/apple-midi-mcp](https://github.com/ugufru/apple-midi-mcp) is a native CoreMIDI bridge that can also read incoming messages and handles SysEx. [pnilan/midi-mcp](https://github.com/pnilan/midi-mcp) sends notes, CC and SysEx to hardware.
+- **Specific gear:** [feamster/digitakt-midi-mcp](https://github.com/feamster/digitakt-midi-mcp) for the Elektron Digitakt.
+
+midi-mcp focuses on playing along: it captures what you play as notes rather than raw messages, and it can loop a backing track while it listens.
+
 ## How it started
 
 With an Arturia Minilab3 and Analog Lab, I asked Claude Code "can you access my keyboard?" One session later it had guessed a tune (wrongly), harmonized it (nicely), researched whether any DAW already does this (none quite do), and written this server.
