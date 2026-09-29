@@ -1,0 +1,23 @@
+[project]
+name = "midi-mcp"
+version = "0.1.0"
+description = "MCP server that lets an AI agent listen to, play and record MIDI on local ports"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Matthias Eichner" }]
+dependencies = [
+    "mcp>=2.2",
+    "mido>=1.3",
+    "python-rtmidi>=1.5",
+]
+
+[project.scripts]
+midi-mcp = "midi_mcp:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["midi_mcp.py"]
